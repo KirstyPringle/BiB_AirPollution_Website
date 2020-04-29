@@ -1,34 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 
-/* Style the header */
-.header {
-  padding: 80px;
-  text-align: right;
-  background: #1abc9c;
-  color: white;
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
 }
 
-/* Increase the font size of the h1 element */
-.header h1 {
-  font-size: 40px;
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>BiB Breathes - Schools Activities</h1>
-  <p>A learning resource about air pollution.</p>
+<h2>Air Pollution Zone</h2>
+<p>Intro Para.</p>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Factsheets</h3>
+      <p>Click here for 10 facts about air</p>
+      <img src="Images/cloud.jpg">
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Activities</h3>
+      <p>Learning resources</p>
+      <img src="Images/cloud.jpg">
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Games</h3>
+      <p>Games</p>
+      <img src="Images/cloud.jpg">
+    </div>
+  </div>
+
 </div>
 
 </body>
+</html>
